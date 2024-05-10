@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+ <title>JavaScript Radio Button</title>
+
+</head>
+
+<body>
+
+
+
+<h1>Select your favourite artists:</h1>
+
+<form>
+
+ <input type="radio" name="artists" value="Tyler, the Creator"> Tyler, the Creator<br>
+
+ <input type="radio" name="artists" value="Frank Ocean"> Frank Ocean<br>
+
+ <input type="radio" name="artists" value="Kendrick Lamar"> Kendrick Lamar<br>
+
+ <input type="radio" name="artists" value="Kanye West"> Kanye West<br>
+
+ <input type="radio" name="artists" value="Taylor Swift"> Taylor Swift<br>
+
+</form>
+
+
+
+<h2>Favourite Genres:</h2>
+
+<form>
+
+ <label><input type="checkbox" name="genre" value="Hip-Hop"> Hip-Hop</label>
+
+ <label><input type="checkbox" name="genre" value="Pop"> Pop</label>
+
+ <label><input type="checkbox" name="genre" value="EDM"> EDM</label>
+
+ <label><input type="checkbox" name="genre" value="R&B"> R&B</label>
+
+ <label><input type="checkbox" name="genre" value="Rock"> Rock</label>
+
+</form>
+
+
+
+<button type="button" id="btn">Show Selected Value</button>
+
+
+
+<script>
+
+const btn = document.querySelector('#btn');
+
+btn.addEventListener('click', (event) => {
+
+ let artists = document.querySelector('input[name="artists"]:checked').value;
+
+ let genre = [];
+
+ let checkboxes = document.querySelectorAll('input[name="genre"]:checked');
+
+
+
+ for (let checkbox of checkboxes) {
+
+  genre.push(checkbox.value);
+
+ }
+
+
+
+ alert("Artist: " + artists + "\nGenres: " + genre.join(", "));
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>
